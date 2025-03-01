@@ -1,0 +1,8 @@
+[package]
+name = "tv-rust-models"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+burn = "0.16.0"
+surrealml-core = "0.1.3"

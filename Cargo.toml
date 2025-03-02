@@ -1,8 +1,7 @@
 [package]
-name = "tv-rust-models"
+name = "burn-vision"
 version = "0.1.0"
 edition = "2024"
 
 [dependencies]
 burn = "0.16.0"
-surrealml-core = "0.1.3"

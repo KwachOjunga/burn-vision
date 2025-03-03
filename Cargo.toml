@@ -1,7 +1,9 @@
 [package]
 name = "burn-vision"
 version = "0.1.0"
+author = "KwachOjunga ojungakwach@gmail.com"
 edition = "2024"
 
+
 [dependencies]
-burn = "0.16.0"
+burn = { version="0.16.0", features = ["train", "wgpu", "ndarray", "candle", "autotune", "tui", "metrics"]}

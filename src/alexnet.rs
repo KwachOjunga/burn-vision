@@ -1,11 +1,9 @@
-#![allow(unused)]
-use core::num;
-use std::usize;
+use core::usize;
 
 use burn::{
     nn::{conv::{Conv2d, Conv2dConfig}, pool::{AdaptiveAvgPool2d,AdaptiveAvgPool2dConfig, MaxPool2d, MaxPool2dConfig}, Dropout, DropoutConfig, Linear, LinearConfig, PaddingConfig2d, Relu
     },
-    prelude::*, tensor::T,
+    prelude::*, 
 };
 
 #[derive(Module, Debug)]
@@ -27,7 +25,7 @@ pub struct AlexNetConfig{
 impl AlexNetConfig {
     pub fn init<B: Backend>(&self, device: &<B as Backend>::Device, ) -> AlexNet<B> {
         let tensor = Tensor::<B, 3>::ones([2, 3, 4], &device);
-        let reshaped = tensor.reshape([2, -1]);
+        let _reshaped = tensor.reshape([2, -1]);
         let features = FeatureExtractorConfig::init::<B>(device);
         let classifier = AlexNetClassifierConfig::init::<B>(device, self.num_classes);
         AlexNet {
@@ -44,7 +42,7 @@ impl<B: Backend> AlexNet<B> {
         let [batch_size, height, width] = data.dims();
         let x = data.reshape([batch_size, 1, height, width]);
         let x = self.feature_extractor.forward(x);
-        let mut x = self.avg_pool.forward(x);
+        let x = self.avg_pool.forward(x);
         let x = self.classifier.forward(x);
         x
     }

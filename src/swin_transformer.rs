@@ -3,5 +3,6 @@
 #![allow(unused)]
 
 use burn::prelude::*;
+
 #[derive(Debug, Copy, Clone, Module)]
 pub struct SwinTransformer;

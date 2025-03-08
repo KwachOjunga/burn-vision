@@ -41,6 +41,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "alex"
+version = "0.1.0"
+dependencies = [
+ "burn-vision",
+]
+
+[[package]]
 name = "aligned-vec"
 version = "0.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"

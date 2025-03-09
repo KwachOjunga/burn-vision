@@ -10,5 +10,6 @@ burn = { version="0.16.0", features = ["train", "wgpu", "ndarray", "candle", "au
 
 [workspace]
 members = [
-    "examples/*"
+    "examples/alex",
+    "crates/*"
 ]

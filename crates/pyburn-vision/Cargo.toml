@@ -1,0 +1,15 @@
+[package]
+name = "pyburn-vision"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "pyburn_vision"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = "0.23.3"
+
+[dependencies.burn-vision]
+path = "../../"

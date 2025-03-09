@@ -14,6 +14,7 @@ clean:
 run name: build
     cargo run --release -p {{name}}
 
+# IF RUNNING examples FOR THE FIRST TIME
 # by default torchvison installs torch automatically
 install:
     pip install uv
@@ -22,5 +23,3 @@ install:
 # convert a model to a format that can be handled by burn
 convert model:
    python3 ./examples/py_Files/convert_to_pt.py {{model}} {{work_dir}}
-
-

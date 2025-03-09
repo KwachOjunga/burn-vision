@@ -1,4 +1,5 @@
 instances := 'alexnet'
+work_dir := "$(pwd)"
 
 alias b := build
 
@@ -12,3 +13,14 @@ clean:
 # run instances in the example dir
 run name: build
     cargo run --release -p {{name}}
+
+# by default torchvison installs torch automatically
+install:
+    pip install uv
+    uv pip install torchvision
+
+# convert a model to a format that can be handled by burn
+convert model:
+   python3 ./examples/py_Files/convert_to_pt.py {{model}} {{work_dir}}
+
+

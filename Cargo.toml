@@ -5,11 +5,11 @@ author = "KwachOjunga ojungakwach@gmail.com"
 edition = "2024"
 
 
-[dependencies]
-burn = { version="0.16.0", features = ["train", "wgpu", "ndarray", "candle", "autotune", "tui", "metrics"]}
-
 [workspace]
 members = [
     "examples/alex",
     "crates/*"
 ]
+
+[dependencies]
+burn = { version = "0.16.0", features = ["train", "wgpu", "ndarray", "tui"] }

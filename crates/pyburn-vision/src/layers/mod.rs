@@ -1,16 +1,25 @@
 #![allow(unused)]
 
+use burn_vision::burn::{nn, optim::*};
 use pyo3::prelude::*;
-use burn_vision::burn::{
-    optim::*,
-    nn
-};
+use pyo3::pymodule;
 
+// pub mod activations;
+// pub mod optimizations;
+
+#[pymodule]
 pub mod layers {
     /// core layer types
-    
-    
-    pub mod activations {}
-    pub mod optimizers {}
-    /// traits to identify layers
+    use crate::pymodule;
+
+    #[pymodule]
+    mod activations {
+        //e crate::layers::activations;
+        use crate::pymodule;
+    }
+    #[pymodule]
+    mod optimizers {
+        //use crate::layers::optimizations;
+        use crate::pymodule;
+    }
 }

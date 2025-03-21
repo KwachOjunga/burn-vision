@@ -1,7 +1,6 @@
 use pyo3::prelude::*;
-mod  activations;
-mod  layers;
-mod optimizations;
+use pyo3::wrap_pymodule;
+pub mod layers;
 
 /// Formats the sum of two numbers as string.
 #[pyfunction]
@@ -12,6 +11,6 @@ fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
 /// A Python module implemented in Rust.
 #[pymodule]
 fn pyburn_vision(m: &Bound<'_, PyModule>) -> PyResult<()> {
-    m.add_function(wrap_pyfunction!(sum_as_string, m)?)?;
+    m.add_submodule(&layers::layers)?;
     Ok(())
 }

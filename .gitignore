@@ -1,4 +1,9 @@
 /target
 todo.md
-/docs/*
+./docs
+/docs
 /models
+src/json
+src/txt
+examples/models
+*.onnx

@@ -157,5 +157,3 @@ impl<B: Backend> AlexNetClassifier<B> {
         x
     }
 }
-
-

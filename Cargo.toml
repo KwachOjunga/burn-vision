@@ -9,7 +9,7 @@ edition = "2024"
 members = [
     "examples/alex",
     "crates/*"
-]
+, "examples/googlenet"]
 
 [dependencies]
 burn = { version = "0.16.0", features = ["train", "wgpu", "ndarray", "tui"] }

@@ -1,4 +1,9 @@
 // Generated from ONNX "densenet121.onnx" by burn-import
+use burn::nn::BatchNorm;
+use burn::nn::BatchNormConfig;
+use burn::nn::Linear;
+use burn::nn::LinearConfig;
+use burn::nn::PaddingConfig2d;
 use burn::nn::conv::Conv2d;
 use burn::nn::conv::Conv2dConfig;
 use burn::nn::pool::AdaptiveAvgPool2d;
@@ -7,18 +12,12 @@ use burn::nn::pool::AvgPool2d;
 use burn::nn::pool::AvgPool2dConfig;
 use burn::nn::pool::MaxPool2d;
 use burn::nn::pool::MaxPool2dConfig;
-use burn::nn::BatchNorm;
-use burn::nn::BatchNormConfig;
-use burn::nn::Linear;
-use burn::nn::LinearConfig;
-use burn::nn::PaddingConfig2d;
 use burn::record::FullPrecisionSettings;
 use burn::record::Recorder;
 use burn::{
     module::Module,
-    tensor::{backend::Backend, Tensor},
+    tensor::{Tensor, backend::Backend},
 };
-
 
 #[derive(Module, Debug)]
 pub struct Model<B: Backend> {
@@ -213,7 +212,6 @@ pub struct Model<B: Backend> {
     phantom: core::marker::PhantomData<B>,
     device: burn::module::Ignored<B::Device>,
 }
-
 
 impl<B: Backend> Default for Model<B> {
     fn default() -> Self {

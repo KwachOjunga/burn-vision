@@ -1954,6 +1954,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "googlenet"
+version = "0.1.0"
+dependencies = [
+ "burn-vision",
+]
+
+[[package]]
 name = "gpu-alloc"
 version = "0.6.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"

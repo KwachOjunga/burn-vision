@@ -16,8 +16,8 @@ pub mod googlenet;
 // pub mod mobilenetv3;
 // pub mod resnext;
 // pub mod widenet;
-pub mod regnet_x_16gf;
 pub mod efficientnet_b0;
+pub mod regnet_x_16gf;
 // pub mod mnasnet;
 
 // pub mod vgg;

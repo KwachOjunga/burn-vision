@@ -91,3 +91,51 @@ model.add()
 .
 model.backend = "Wgpu"
 ```
+
+
+
+### Note
+
+
+The models extracted by onnx2... are rather verbose and expose only the backend
+as its object capable of being altered arbitrarily.
+Now, for the package to be considered as even remotely flexible certain facrors have
+to be met.
+This proves true provided my assumptions of what it means to have a deep learning
+architecture stand.
+
+(a) a model's architecture retains its functional ability and utility
+  and is not bound by particularities of its internal implementation.
+(b) What defines the deep learning architecture is fundamentally the organization
+  of neural network layers.
+
+
+To have a model whose backend is configurable, input passed on from python's side may
+be in form of a string or python enum that can be matched to yield the set backend on
+the python's side.
+
+```
+  from typing import Enum
+  from p_vision import googlenet
+  
+  backend = Enum {
+    WGPUDEVICE,
+    FUSIONJITBACKEND,
+    PYTORCH,
+    NDARRAY,
+  }
+  # i am uncertain of whether or not this is the correct implementation of a python enum
+
+  def train_model(device : backend):
+      mybackend = backend.WGPUDEVUCE
+      model = googlenet(mybackend)
+      return model.train(train_data, # and dataloading configurations)
+      
+```
+
+
+On the backend, you just have to f8gue out how to ensure the parameter passed from python
+will be received before anything else can be done.
+
+It is very likely that py03's types allow for that differentiation in the functions exposed in
+to the frontend.

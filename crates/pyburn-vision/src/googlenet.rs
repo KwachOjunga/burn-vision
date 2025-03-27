@@ -17,7 +17,7 @@ use burn::{
 
 
 #[derive(Module, Debug)]
-pub struct Model<B: Backend> {
+pub struct Googlenet<B: Backend> {
     conv2d1: Conv2d<B>,
     maxpool2d1: MaxPool2d,
     conv2d2: Conv2d<B>,
@@ -110,7 +110,7 @@ pub struct Model<B: Backend> {
 //     }
 // }
 
-impl<B: Backend> Model<B> {
+impl<B: Backend> Googlenet<B> {
     #[allow(unused_variables)]
     pub fn new(device: &B::Device) -> Self {
         let conv2d1 = Conv2dConfig::new([3, 64], [7, 7])

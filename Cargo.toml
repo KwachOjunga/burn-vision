@@ -8,8 +8,9 @@ edition = "2024"
 [workspace]
 members = [
     "examples/alex",
-    "crates/*"
-, "examples/googlenet"]
+    "crates/*",
+    "examples/googlenet"
+]
 
 [dependencies]
 burn = { version = "0.16.0", features = ["train", "wgpu", "ndarray", "tui"] }

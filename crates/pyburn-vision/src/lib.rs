@@ -1,6 +1,7 @@
 use pyo3::prelude::*;
-use pyo3::wrap_pymodule;
+// use pyo3::wrap_pymodule;
 pub mod layers;
+pub mod models;
 
 /// Formats the sum of two numbers as string.
 #[pyfunction]

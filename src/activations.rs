@@ -9,7 +9,7 @@ pub enum Activations {
 impl Activations {
     pub fn forward<B: Backend>(&self, in_tensor: Tensor<B, 4>) -> Tensor<B, 4> {
         match self {
-            Activations::RELU(act) => act.forward(in_tensor),
+            Activations::RELU(func) => func.forward(in_tensor),
         }
     }
 }

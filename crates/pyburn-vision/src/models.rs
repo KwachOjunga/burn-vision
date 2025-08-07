@@ -1,7 +1,9 @@
 #![allow(dead_code)]
 use pyo3::prelude::*;
-
-use burn_vision::alexnet::AlexNet;
+use crate::implement_send_and_sync;
+use burnvision::burn::backend::Wgpu;
 
 #[pyclass]
-struct Alexnet(AlwxNet);
+pub struct Alexnet( burnvision::alexnet::AlexNet<Wgpu>);
+
+implement_send_and_sync!(Alexnet);

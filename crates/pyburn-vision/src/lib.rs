@@ -1,11 +1,20 @@
 use pyo3::prelude::*;
-// use pyo3::wrap_pymodule;
 pub mod layers;
 pub mod models;
 
-/// A Python module implemented in Rust.
+#[macro_export]
+macro_rules! implement_send_and_sync {
+    ($name:ty) => {
+        unsafe impl Send for $name {}
+        unsafe impl Sync for $name {}
+    };
+}
+
 #[pymodule]
-fn pyburn_vision(m: &Bound<'_, PyModule>) -> PyResult<()> {
-    m.add_submodule(&layers::layers)?;
-    Ok(())
+mod pyburn_vision {
+
+    use super::*;
+
+    #[pymodule_export]
+    use super::models::Alexnet;
 }

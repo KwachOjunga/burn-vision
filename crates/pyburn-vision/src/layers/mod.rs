@@ -1,6 +1,6 @@
 #![allow(unused)]
 
-use burn_vision::burn::{nn, optim::*};
+use burnvision::burn::{nn, optim::*};
 use pyo3::prelude::*;
 use pyo3::pymodule;
 

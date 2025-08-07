@@ -1,3 +1,5 @@
+#![recursion_limit = "256"]
+
 use pyo3::prelude::*;
 pub mod layers;
 pub mod models;
@@ -13,8 +15,17 @@ macro_rules! implement_send_and_sync {
 #[pymodule]
 mod pyburn_vision {
 
-    use super::*;
-
     #[pymodule_export]
     use super::models::Alexnet;
+    #[pymodule_export]
+    use super::models::Densenet121;
+    #[pymodule_export]
+    use super::models::Efficientnetb0;
+    #[pymodule_export]
+    use super::models::Googlenet;
+    #[pymodule_export]
+    use super::models::Inceptionv3;
+    #[pymodule_export]
+    use super::models::Regnetx;
+
 }

@@ -1,11 +1,16 @@
 [package]
-name = "burn-vision"
+name = "burnvision"
 version = "0.1.0"
-author = "KwachOjunga ojungakwach@gmail.com"
+authors = ["KwachOjunga ojungakwach@gmail.com"]
 edition = "2024"
+repository = "https://github.com/KwachOjunga/burn-vision"
+keywords = ["science", "machine-learning"]
 
+[badges]
+maintenance = { status = "actively-developed" }
 
 [workspace]
+resolver = "3"
 members = [
     "examples/alex",
     "crates/*",
@@ -13,4 +18,4 @@ members = [
 ]
 
 [dependencies]
-burn = { version = "0.16.0", features = ["train", "wgpu", "ndarray", "tui"] }
+burn = { version = "0.18.0", features = ["train", "wgpu", "ndarray", "tui"] }

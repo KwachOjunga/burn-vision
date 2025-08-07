@@ -15,9 +15,9 @@ run name: build
     cargo run --release -p {{name}}
 
 # IF RUNNING examples FOR THE FIRST TIME
-# by default torchvison installs torch automatically
+# by default torchvison installs torch 
 install:
-    pip install uv
+    pip install uv #use uv to speed up install process
     uv pip install torchvision
 
 # convert a model to a format that can be handled by burn

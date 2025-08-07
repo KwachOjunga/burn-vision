@@ -1,7 +1,10 @@
 [package]
 name = "pyburn-vision"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
+authors = ["KwachOjunga ojungakwach@gmail.com"]
+repository = "https://github.com/KwachOjunga/burn-vision"
+keywords = ["science", "machine-learning"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [lib]
@@ -11,5 +14,5 @@ crate-type = ["cdylib"]
 [dependencies]
 pyo3 = { version = "0.23.3", features = ["extension-module"] }
 
-[dependencies.burn-vision]
+[dependencies.burnvision]
 path = "../../"

@@ -1,5 +1,5 @@
-use burn_vision::burn::backend::Wgpu;
-use burn_vision::googlenet::Model;
+use burnvision::burn::backend::Wgpu;
+use burnvision::googlenet::Model;
 
 fn main() {
     type MyBackend = Wgpu<f32, i32>;

@@ -1,5 +1,5 @@
-use burn_vision::alexnet::AlexNetConfig;
-use burn_vision::burn::backend::Wgpu;
+use burnvision::alexnet::AlexNetConfig;
+use burnvision::burn::backend::Wgpu;
 
 fn main() {
     type MyBackend = Wgpu<f32, i32>;

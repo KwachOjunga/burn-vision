@@ -17,5 +17,12 @@ members = [
     "examples/googlenet"
 ]
 
+[features]
+wgpu = ["pyburn/wgpu"]
+ndarray = ["pyburn/ndarray"]
+
+
 [dependencies]
-burn = { version = "0.18.0", features = ["train", "wgpu", "ndarray", "tui"] }
+burn = { version = "0.18.0", features = ["train", "wgpu", "ndarray"] }
+pyburn = { git = "https://github.com/KwachOjunga/wrap-burn.git", version = "0.1.3", features = ["wgpu", "ndarray"] }
+

@@ -1,3 +1,5 @@
+//! I'm seriously questioning the neccessity of this module
+
 use burn::nn::Relu;
 use burn::prelude::*;
 

@@ -1,3 +1,4 @@
+set shell := ["powershell.exe", "-c"]
 instances := 'alexnet'
 work_dir := "$(pwd)"
 

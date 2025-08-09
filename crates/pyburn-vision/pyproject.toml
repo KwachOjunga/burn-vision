@@ -11,7 +11,13 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dynamic = ["version"]
+
+#[project.optional-dependencies]
+#wgpu = ["wgpu"]
+#ndarray = ["ndarray"]
+
 [tool.maturin]
+profile = "release"
 features = ["pyo3/extension-module"]
 
 [project.urls]

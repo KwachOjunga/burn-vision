@@ -3,9 +3,18 @@
 use crate::implement_send_and_sync;
 use burnvision::burn::backend::Wgpu;
 use pyo3::prelude::*;
+use burnvision::pyburn;
 
 #[pyclass]
 pub struct Alexnet(burnvision::alexnet::AlexNet<Wgpu>);
+
+#[pymethods]
+impl Alexnet {
+    
+    pub fn forward(&self, data: pyburn::tensor::base::Tensor3) -> pyburn::tensor::base::TensorPy {
+        self.0.forward(data.inner).into()
+    }
+}
 
 #[pyclass]
 pub struct Densenet121(burnvision::densenet121::Model<Wgpu>);

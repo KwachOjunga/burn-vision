@@ -16,3 +16,4 @@ pyo3 = { version = "0.25.1", features = ["extension-module"] }
 
 [dependencies.burnvision]
 path = "../../"
+features = ["wgpu"]

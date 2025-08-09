@@ -1,5 +1,4 @@
 # pyburn-vision
----
 
 An python extension to burnvision.
 The models offered by pyburnivsion run on the `webgpu` backend.

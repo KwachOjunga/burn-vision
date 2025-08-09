@@ -22,7 +22,7 @@ jobs:
        pkg-config \
        libssl-dev \
        libffi-dev \
-       python3-dev
+       python3-dev &&
        cargo build --verbose
     - name: Run tests
       run: cargo test --verbose
